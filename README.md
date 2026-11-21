@@ -22,7 +22,7 @@ macOS 14 以降(Apple シリコン・Intel)
 
 ## 入れ方
 
-1. [Releases](../../releases) から `SmaC-<版>.zip` をダウンロードして開き、`SmaC.app` を「アプリケーション」フォルダに入れます。
+1. [Releases](https://github.com/yushun0825/smac/releases/latest) から `SmaC-<版>.zip` をダウンロードして開き、`SmaC.app` を「アプリケーション」フォルダに入れます。
 2. このアプリは Apple の公証(notarization)を受けていないので、はじめて開くときに「開けません」と出ます。
    「システム設定」→「プライバシーとセキュリティ」の下にある「このまま開く」を押すと開けます。
 
@@ -51,3 +51,7 @@ open SmaC.xcodeproj
 | 取り消す | ⌘Z(ほとんどの操作を取り消せます) |
 
 くわしくはアプリの「ヘルプ」→「SmaC ヘルプ」を見てください。
+
+## ライセンス
+
+MIT ライセンスです。[LICENSE](LICENSE) を見てください。
