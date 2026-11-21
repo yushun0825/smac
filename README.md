@@ -22,9 +22,7 @@ macOS 14 以降(Apple シリコン・Intel)
 
 ## 入れ方
 
-1. [Releases](https://github.com/yushun0825/smac/releases/latest) から `SmaC-<版>.zip` をダウンロードして開き、`SmaC.app` を「アプリケーション」フォルダに入れます。
-2. このアプリは Apple の公証(notarization)を受けていないので、はじめて開くときに「開けません」と出ます。
-   「システム設定」→「プライバシーとセキュリティ」の下にある「このまま開く」を押すと開けます。
+[Releases](https://github.com/yushun0825/smac/releases/latest) から `SmaC-<版>.dmg` をダウンロードして開き、`SmaC` を「Applications」(アプリケーション)フォルダへドラッグします。
 
 ## ソースから作る
 
@@ -36,7 +34,8 @@ xcodegen generate
 open SmaC.xcodeproj
 ```
 
-`Tools/install.sh` で Release を作って `/Applications/SmaC.app` に入れ、`Tools/package.sh` で配る用の zip を作ります。
+`Tools/install.sh` で Release を作って `/Applications/SmaC.app` に入れます。
+配る DMG は `Tools/release.sh` で作ります(Developer ID の証明書と、Xcode にサインインした Apple アカウントが要ります)。
 データの読み書きと計算は `Packages/SMPKit`(Swift Package)にあり、`swift test` で確かめられます。
 
 ## 使い方の要点
