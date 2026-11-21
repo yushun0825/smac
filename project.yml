@@ -1,0 +1,51 @@
+name: SmaC
+options:
+  developmentLanguage: ja
+  knownRegions: [ja, Base]
+  bundleIdPrefix: io.github.yushun0825
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+packages:
+  SMPKit:
+    path: Packages/SMPKit
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    # 開発用の証明書が無い Mac でも動くよう「ローカルで実行するための署名」にしている
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: "-"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_APP_SANDBOX: "NO"
+    DEAD_CODE_STRIPPING: "YES"
+targets:
+  SmaC:
+    type: application
+    platform: macOS
+    sources:
+      - path: SmaC
+    dependencies:
+      - package: SMPKit
+        product: SMPKit
+    settings:
+      base:
+        PRODUCT_NAME: SmaC
+        PRODUCT_MODULE_NAME: SmaC
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.yushun0825.smac
+        INFOPLIST_FILE: SmaC/Support/Info.plist
+        GENERATE_INFOPLIST_FILE: "NO"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        DEVELOPMENT_LANGUAGE: ja
+        ENABLE_HARDENED_RUNTIME: "YES"
+        COMBINE_HIDPI_IMAGES: "YES"
+schemes:
+  SmaC:
+    build:
+      targets:
+        SmaC: all
+    run:
+      config: Debug
+    archive:
+      config: Release
